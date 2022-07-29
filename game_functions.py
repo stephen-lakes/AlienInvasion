@@ -33,6 +33,8 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
     """ Start a new game when the player click Play."""
     button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked and not stats.game_active:
+        # Hide the cursor.
+        pygame.mouse.set_visible(False)
         # Reset the game statistics.
         stats.reset_stats()
         stats.game_active = True
