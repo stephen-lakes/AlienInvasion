@@ -31,7 +31,7 @@ def check_events(ai_settings, screen, stats, play_button, ship, bullets):
 
 def check_play_button(stats, play_button, mouse_x, mouse_y):
     """ Start a new game when the player click Play."""
-    if play_button.rect.collidePoint(mouse_x, mouse_y):
+    if play_button.rect.collidepoint(mouse_x, mouse_y):
         stats.game_active = True
 
 def check_keyup_events(event, ship):
