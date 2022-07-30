@@ -92,11 +92,11 @@ def update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets):
     # If so, get rif of the bullet and the alien.
     check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, bullets)
 
-    def check_high_score(stats, sb):
-        """ Check to see if there's a new high score. """ 
-        if stats.score > stats.high_score:
-            stats.high_score = stats.score
-            sb.prep_high_score()
+def check_high_score(stats, sb):
+    """ Check to see if there's a new high score. """ 
+    if stats.score > stats.high_score:
+        stats.high_score = stats.score
+        sb.prep_high_score()
 
 def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, bullets):
     """ Respond to bullet-aliens collision. """
