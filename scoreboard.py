@@ -19,7 +19,7 @@ class ScoreBoard():
         self.prep_scrore()
         self.prep_high_score()
 
-    def prep_scrore(self):
+    def prep_score(self):
         """ Turn the score into a rendered image. """
         # Round the score to the nearest 10, 100, 1000 and so on.
         rounded_score = int(round(self.stats.score, -1))
