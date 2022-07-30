@@ -53,7 +53,7 @@ class ScoreBoard():
         self.level_image = self.font.render(str(self.stats.level), True,
                                     self.text_color, self.ai_settings.bg_color)
 
-    def prep_ship(self):
+    def prep_ships(self):
         """ Show how many ships are left. """
         self.ships = Group()
         for ship_number in range(self.stats.ships_left):
