@@ -20,7 +20,9 @@ class ScoreBoard():
 
     def prep_scrore(self):
         """ Turn the score into a rendered image. """
-        score_str = str(self.stats.score)
+        # Round the score to the nearest 10, 100, 1000 and so on.
+        rounded_score = int(round(self.stats.score, -1))
+        score_str = "{:,}".format(rounded_score)
         self.score_image = self.font.render(score_str, True, self.text_color,
                         self.ai_settings.bg_color)
 
