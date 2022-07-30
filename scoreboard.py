@@ -1,3 +1,6 @@
+import pygame
+
+
 class ScoreBoard():
     """ A class to report scoring information. """
 
@@ -8,4 +11,7 @@ class ScoreBoard():
         self.ai_settings = ai_settings
         self.stats = stats
 
-    
+        # Font settings for scoring information.
+        self.text_color = (30, 30, 30)
+        self.font = pygame.font.SysFont(None, 48)
+        
