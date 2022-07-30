@@ -6,6 +6,7 @@ import game_functions as gf
 from settings import Settings
 from ship import Ship
 from game_stats import GameStats
+from scoreboard import ScoreBoard
 
 def run_game():
     # Initialize pygame, settings and screen object.
@@ -18,8 +19,9 @@ def run_game():
     # Make the play button.
     play_button = Button(ai_settings, screen, "Play")
 
-    # Create an instance to store game statistics.
+    # Create an instance to store game statistics and create a scoreboard.
     stats = GameStats(ai_settings)
+    sb = ScoreBoard(ai_settings, screen, stats)
 
     # Make a ship, a group of bullets and a group of aliens.
     ship = Ship(ai_settings, screen)
