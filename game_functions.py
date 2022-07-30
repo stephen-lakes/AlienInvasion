@@ -104,6 +104,7 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, 
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
 
     if collisions:
+        # if an entire fleet is distoryed, start a new level
         for aliens in collisions.values():
             stats.score += ai_settings.alien_points
             sb.prep_score()
@@ -113,6 +114,11 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, 
         # Destroy existing bullets, speed up game and create new fleet.
         bullets.empty()
         ai_settings.increase_speed()
+
+        # Increase level.
+        stats.level += 1
+        sb.prep_level()
+
         create_fleet(ai_settings, screen, ship, aliens)
 
 def fire_bullet(ai_settings, screen, ship, bullets):
