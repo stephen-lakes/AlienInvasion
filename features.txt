@@ -1,0 +1,9 @@
+- Store  and Load high score from a file
+- Add sound effects
+- Aliens shooting back
+- Refactor check_bullet_collison(), check_play_button()
+
+More methods to handle refactoring
+- start_game()
+- star_new_game()
+- prep_images()
