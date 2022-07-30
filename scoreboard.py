@@ -1,5 +1,7 @@
 import pygame
+from pygame.sprite import Group
 
+from ship import Ship
 
 class ScoreBoard():
     """ A class to report scoring information. """
