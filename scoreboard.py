@@ -21,6 +21,7 @@ class ScoreBoard():
         self.prep_score()
         self.prep_high_score()
         self.prep_level()
+        self.prep_ships()
 
     def prep_score(self):
         """ Turn the score into a rendered image. """
@@ -51,6 +52,15 @@ class ScoreBoard():
         """ Turn level into a rendered image. """
         self.level_image = self.font.render(str(self.stats.level), True,
                                     self.text_color, self.ai_settings.bg_color)
+
+    def prep_ship(self):
+        """ Show how many ships are left. """
+        self.ships = Group()
+        for ship_number in range(self.stats.ships_left):
+            ship = ship(self.ai_settings, self.screen)
+            ship.rect.x = 10 + ship_number * ship.rect.width
+            ship.rect.y = 10
+            self.ships.add(ship)
         
         # Position the level below the score .
         self.level_rect = self.level_image.get_rect()
