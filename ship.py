@@ -1,10 +1,12 @@
-from sys import float_repr_style
 import pygame
+from pygame.sprite import Sprite
+from sympy import Shi
 
-class Ship():
+class Ship(Sprite):
 
     def __init__(self, ai_settings, screen) -> None:
         """ Initialize the ship and set its starting position. """
+        super(Ship, self).__init__()
         self.screen = screen
         self.ai_settings = ai_settings
 
